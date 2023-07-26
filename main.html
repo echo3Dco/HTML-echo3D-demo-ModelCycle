@@ -119,7 +119,7 @@
         }
 
         function getStorageID(resultJSON, entryID) {
-            if (resultJSON.db[entryID].hologram.filename.slice(-3) === "glb") {
+            if (resultJSON.db[entryID].hologram.filename.slice(-4) === ".glb") {
                 return resultJSON.db[entryID].hologram.storageID;
             } else {
                 return resultJSON.db[entryID].additionalData.glbHologramStorageID;
