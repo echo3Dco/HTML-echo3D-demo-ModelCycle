@@ -7,4 +7,4 @@ This repository contains the html of a webpage with an Echo component that cycle
 ## Instructions
 
 1. Clone this repository
-2. Open `main.html`
+2. Host a local server in your workspace and view `main.html`
