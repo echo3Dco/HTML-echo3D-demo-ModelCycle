@@ -129,7 +129,7 @@
             const entryList = Object.keys(resultJSON["db"]);
             const toggleModel = document.querySelector('#modelViewer');
             let j = 0;
-            setInterval(() => toggleModel.setAttribute('src', createDownloadURL(resultJSON, entryList, j++ % entryList.length)), 4000);          
+            setInterval(() => toggleModel.setAttribute('src', createDownloadURL(resultJSON, entryList, j++ % entryList.length)), 5000);          
         }
 
         function SuccessCallback(result) {
@@ -142,7 +142,7 @@
         }
 
         function FailureCallback(error) {
-            console.log('FailureCallback');
+            console.log('[ERROR] FailureCallback');
         }
 
     </script>
