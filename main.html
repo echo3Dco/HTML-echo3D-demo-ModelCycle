@@ -52,7 +52,7 @@
        margin-top: 10px;
        margin-bottom: 10px;
        background-color: white;
-       width: 99%;
+       width: 98%;
     }
     textarea {
         height: 470px;
@@ -110,10 +110,6 @@
             return $('#inputSecKey').val();
         }
 
-        function showResult(res) {
-            $('#txtOutput').val(res);
-        }
-
         function createDownloadURL(resultJSON, entryList, index) {
             return "https://api.echo3D.com/query?key=" + getApiKey() + "&secKey=" + getSecKey() + "&file=" + getStorageID(resultJSON, entryList[index]);
         }
@@ -129,7 +125,6 @@
         async function TestQueryAll() {
             const echoApi = new Echo3DApi(getApiKey(), getSecKey());
             let result = await echoApi.queryAll(SuccessCallback);
-            showResult(result);
             const resultJSON = JSON.parse(result);
             const entryList = Object.keys(resultJSON["db"]);
             const toggleModel = document.querySelector('#modelViewer');
@@ -189,14 +184,6 @@
         </div>
     </div>
     <div class="container">
-        <div class="container-right">
-            <div style="font-size: 24px; margin-left: 20px; margin-top: 5px; font-weight: 600">
-                API Response:
-            </div>
-            <div>
-                <textarea id="txtOutput" placeholder="{ }"></textarea>
-            </div>
-        </div>
         <div class="container-right" style="height: 874px; padding: 20px">
             <div class="row no-gutters">
                 <div class="col-sm-2">
